@@ -6,17 +6,17 @@ exports.run = (client, message, args) => {
   .setColor(0xFF0000)
   .setTimestamp()
   .setAuthor(message.author.username, message.author.avatarURL)
-  .addField(':warning: Uyarı :warning:', '`sustur` adlı komutu özel mesajlarda kullanamazsın.')
+  .addField(':warning: Uyarı :warning:', '`sustur` Adlı Komutu Özel Mesajlarda Kullanamazsın.')
   return message.author.sendEmbed(ozelmesajuyari); }
   let guild = message.guild
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', 'mod-log');
+  let modlog = guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Susturulmuş');
-  if (!modlog) return message.reply('`mod-log` kanalını bulamıyorum dostum!.').catch(console.error);
-  if (!muteRole) return message.reply('`Susturulmuş` adlı bir rol bulamıyorum.').catch(console.error);
-  if (reason.length < 1) return message.reply('Susturma sebebini yazmalısın.').catch(console.error);
-  if (message.mentions.users.size < 1) return message.reply('Kimi susturacağını yazmalısın.').catch(console.error);
+  if (!modlog) return message.reply('`logs` Kanalını Bulamıyorum Dostum!.').catch(console.error);
+  if (!muteRole) return message.reply('`Susturulmuş` Adlı Bir Rol Bulamıyorum.').catch(console.error);
+  if (reason.length < 1) return message.reply('Susturma Sebebini Yazmalısın.').catch(console.error);
+  if (message.mentions.users.size < 1) return message.reply('Kimi Susturacağını Yazmalısın.').catch(console.error);
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
@@ -48,6 +48,6 @@ exports.conf = {
 
 exports.help = {
   name: 'sustur',
-  description: 'İstediğiniz kişiyi  susturur.',
-  usage: 'sustur [kullanıcı] [sebep]'
+  description: 'İstediğiniz Kişiyi  Susturur.',
+  usage: 'sustur [Kullanıcı] [Sebep]'
 };
