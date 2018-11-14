@@ -7,16 +7,16 @@ exports.run = (client, message, args) => {
     command = client.aliases.get(args[0]);
   }
   if (!command) {
-    return message.channel.send("`" + args[0] + "` adında bir komut yok.");
+    return message.channel.send("`" + args[0] + "` Adında Bir Komut Yok!");
   } else {
-    message.channel.send("`" + command + "` adlı komut devre dışı bırakılıyor...")
+    message.channel.send("`" + command + "` Adlı Komut Devre Dışı Bırakılıyor...")
       .then(m => {
         client.unload(command)
           .then(() => {
-            m.edit("`" + command + "` adlı komut başarıyla devre dışı bırakıldı.");
+            m.edit("`" + command + "` Adlı Komut Başarıyla Devre Dışı Bırakıldı.");
           })
           .catch(e => {
-            m.edit(`Komut yeniden başlatılırken bir hata oluştu: ${command}\n\`\`\`${e.stack}\`\`\``);
+            m.edit(`Komut Yeniden Başlatılırken Bir Hata Oluştu: ${command}\n\`\`\`${e.stack}\`\`\``);
           });
       });
   }
@@ -32,6 +32,6 @@ exports.conf = {
 
 exports.help = {
   name: 'unload',
-  description: 'İstediğiniz bir komutu devre dışı bırakır.',
-  usage: 'unload <komut adı>'
+  description: 'İstediğiniz Bir Komutu Devre Dışı Bırakır.',
+  usage: 'unload <Komut Adı>'
 };
