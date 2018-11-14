@@ -7,16 +7,16 @@ exports.run = (client, message, args) => {
     command = client.aliases.get(args[0]);
   }
   if (!command) {
-    return message.channel.send("`" + args[0] + "` adında bir komut yok.");
+    return message.channel.send("`" + args[0] + "` Adında Bir Komut Yok.");
   } else {
-    message.channel.send("`" + command + "` adlı komut yeniden başlatılıyor...")
+    message.channel.send("`" + command + "` Adlı Komut Yeniden Başlatılıyor...")
       .then(m => {
         client.reload(command)
           .then(() => {
-            m.edit("`" + command + "` adlı komut başarıyla yeniden başlatıldı.");
+            m.edit("`" + command + "` Adlı Komut Başarıyla Yeniden Başlatıldı.");
           })
           .catch(e => {
-            m.edit(`Komut yeniden başlatılırken bir hata oluştu: ${command}\n\`\`\`${e.stack}\`\`\``);
+            m.edit(`Komut Yeniden Başlatılırken Bir Hata Oluştu: ${command}\n\`\`\`${e.stack}\`\`\``);
           });
       });
   }
@@ -31,6 +31,6 @@ exports.conf = {
 
 exports.help = {
   name: 'reload',
-  description: 'İstediğiniz bir komutu yeniden başlatır.',
-  usage: 'reload <komut adı>'
+  description: 'İstediğiniz Bir Komutu Yeniden Başlatır.',
+  usage: 'reload <Komut Adı>'
 };
