@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
     .setColor(0xFF0000)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .addField(':warning: Uyarı :warning:', '`sunucubilgi` adlı komutu özel mesajlarda kullanamazsın.')
+    .addField(':warning: Uyarı :warning:', '`sunucubilgi` Adlı Komutu Özel Mesajlarda Kullanamazsın.')
     return message.author.sendEmbed(ozelmesajuyari); }
     if (message.channel.type !== 'dm') {
       const sunucubilgi = new Discord.RichEmbed()
@@ -36,6 +36,6 @@ exports.conf = {
 
 exports.help = {
   name: 'sunucubilgi',
-  description: 'Sunucu hakkında bilgi verir.',
+  description: 'Sunucu Hakkında Bilgi Verir.',
   usage: 'sunucubilgi'
 };
